@@ -1,8 +1,7 @@
 function calc() {
-    let twelve = document.getElementById("1200").value;
-    let four = document.getElementById("400").value;
-    let eight = document.getElementById("800").value;
-    let sixteen = document.getElementById("1600").value;
+    let minutes = (parseInt(document.getElementById("400m").value) + parseInt(document.getElementById("800m").value) + parseInt(document.getElementById("1600m").value) + parseInt(document.getElementById("1200m").value)) * 60;
+    let seconds = parseInt(document.getElementById("400s").value) + parseInt(document.getElementById("800s").value) + parseInt(document.getElementById("1600s").value) + parseInt(document.getElementById("1200s").value);
 
-    document.getElementById("time").value = (parseInt(twelve) + parseInt(four) + parseInt(eight) + parseInt(sixteen));
+    let totalSec = minutes + seconds;
+    document.getElementById("time").value = parseInt(totalSec/60) + ":" + (totalSec % 60);
 }
